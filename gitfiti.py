@@ -44,6 +44,16 @@ TITLE = '''
 '''
 
 
+IHEARTDCPPC = [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,1,1,1,4,1,1,4,1,4,1,1,4,4,1,1,1,1,4,4,1,4,4,1,1,4,4,1,1,1,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1,1,1,4,1,4,3,4,3,4,1,4,1,4,1,1,4,1,1,1,4,1,4,1,4,1,4,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1,1,1,4,1,4,3,3,3,4,1,4,1,1,4,1,4,1,1,1,4,4,1,1,4,4,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1,1,1,4,1,1,4,3,4,1,1,4,1,4,1,1,4,1,1,1,4,1,1,1,4,1,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,4,1,1,1,4,4,1,1,1,1,4,4,1,4,1,1,1,4,1,1,1,1,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+]
+
 KITTY = [
   [0,0,0,4,0,0,0,0,4,0,0,0],
   [0,0,4,2,4,4,4,4,2,4,0,0],
@@ -184,6 +194,7 @@ ONEUP_STR = str_to_sprite('''
 
 
 IMAGES = {
+  'dcppc': IHEARTDCPPC,
   'kitty': KITTY,
   'oneup': ONEUP,
   'oneup2': ONEUP2,
@@ -306,7 +317,7 @@ def generate_values_in_date_order(image, multiplier=1):
 def commit(commitdate):
     template = (
         '''GIT_AUTHOR_DATE={0} GIT_COMMITTER_DATE={1} '''
-        '''git commit --allow-empty -m "gitfiti" > /dev/null\n'''
+        '''git commit --allow-empty -m "probably empty" > /dev/null\n'''
     )
     return template.format(commitdate.isoformat(), commitdate.isoformat())
 
@@ -319,8 +330,8 @@ def fake_it(image, start_date, username, repo, git_url, offset=0, multiplier=1):
         'cd $REPO\n'
         'touch README.md\n'
         'git add README.md\n'
-        'touch gitfiti\n'
-        'git add gitfiti\n'
+        'touch empty\n'
+        'git add empty\n'
         '{1}\n'
         'git remote add origin {2}:{3}/$REPO.git\n'
         'git pull origin master\n'
