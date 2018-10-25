@@ -1,3 +1,25 @@
+# Florence Python (fp9695253) DCPPC gitfiti
+
+This repository has been customized to allow Florence Python (Github user: fp9695253) 
+to create custom DCPPC graffiti on the github timeline.
+
+To use:
+
+```
+# Make sure you are logged in as the correct 
+# user associated with the correct Github account
+whoami
+
+# Follow prompts for username/art selection/offset/repo name
+python gitfiti.py
+
+# Run the script that creates a repo to create the drawing
+./gitfiti.sh
+```
+
+----
+
+
 [![Build Status](https://travis-ci.org/gelstudios/gitfiti.svg?branch=master)](https://travis-ci.org/gelstudios/gitfiti)
 
 gitfiti _noun_ : Carefully crafted graffiti in a github commit history calendar.  
